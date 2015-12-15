@@ -52,10 +52,9 @@ public class Ship {
         for (int i = 0; i < this.decksStatuses.length; i++) {
             String strStatus = decksStatuses[i].toString();
             if(Statuses.ShipStatus.valueOf(strStatus)==Statuses.ShipStatus.ALIVE){
-                alive = false;
+                alive = true;
             }
         }
-        //можно ли писать просто return alive?Statuses.ShipStatus.ALIVE: Statuses.ShipStatus.DEAD; ?
-        return alive==true?Statuses.ShipStatus.ALIVE : Statuses.ShipStatus.DEAD;
+        return alive ? Statuses.ShipStatus.ALIVE : Statuses.ShipStatus.DEAD;
     }
 }
