@@ -47,11 +47,11 @@ public class Ship {
         this.decksStatuses = decksStatuses;
     }
 
-    public Statuses.ShipStatus deadOrAlive(){
+    public Statuses.ShipStatus deadOrAlive() {
         boolean alive = false;
-        for (int i = 0; i < this.decksStatuses.length; i++) {
-            String strStatus = decksStatuses[i].toString();
-            if(Statuses.ShipStatus.valueOf(strStatus)==Statuses.ShipStatus.ALIVE){
+        for (Statuses.ShipStatus decksStatuses : this.decksStatuses) {
+            String strStatus = decksStatuses.toString();
+            if (Statuses.ShipStatus.valueOf(strStatus) == Statuses.ShipStatus.ALIVE) {
                 alive = true;
             }
         }
