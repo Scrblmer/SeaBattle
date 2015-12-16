@@ -47,15 +47,14 @@ public class Ship {
         this.decksStatuses = decksStatuses;
     }
 
-    public Statuses.ShipStatus deadOrAlive(){
+    public Statuses.ShipStatus deadOrAlive() {
         boolean alive = false;
-        for (int i = 0; i < this.decksStatuses.length; i++) {
-            String strStatus = decksStatuses[i].toString();
-            if(Statuses.ShipStatus.valueOf(strStatus)==Statuses.ShipStatus.ALIVE){
-                alive = false;
+        for (Statuses.ShipStatus decksStatuses : this.decksStatuses) {
+            String strStatus = decksStatuses.toString();
+            if (Statuses.ShipStatus.valueOf(strStatus) == Statuses.ShipStatus.ALIVE) {
+                alive = true;
             }
         }
-        //можно ли писать просто return alive?Statuses.ShipStatus.ALIVE: Statuses.ShipStatus.DEAD; ?
-        return alive==true?Statuses.ShipStatus.ALIVE : Statuses.ShipStatus.DEAD;
+        return alive ? Statuses.ShipStatus.ALIVE : Statuses.ShipStatus.DEAD;
     }
 }
